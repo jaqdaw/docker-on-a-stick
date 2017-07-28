@@ -1,12 +1,7 @@
 #! /bin/bash
-mkdir ~/doasbuild
-mkdir ~/doasbuild/bash
-mkdir ~/doasbuild/codebase
-mkdir ~/doasbuild/mutt
-mkdir ~/doasbuild/script
-mkdir ~/doasbuild/ssh
-mkdir ~/doasbuild/tmux
-mkdir ~/doasbuild/vim
+set -x
+
+mkdir -p ~/doasbuild/{bash,codebase,mutt,script,ssh,tmux,vim}
 
 # bash config
 cp ~/.bash_profile ~/doasbuild/bash

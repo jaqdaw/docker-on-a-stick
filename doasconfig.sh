@@ -1,5 +1,6 @@
 #! /bin/bash
-cd ~
+set -x
+cd
 
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 
@@ -45,13 +46,13 @@ cd ~/Downloads
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-alpha.17/powershell_6.0.0-alpha.17-1ubuntu1.16.04.1_amd64.deb
 sudo dpkg -i powershell_6.0.0-alpha.17-1ubuntu1.16.04.1_amd64.deb
 sudo apt-get install -f
-cd ~
+cd
 
 # Sort out wcid
-sudo adduser ubuntu netdev 
+sudo adduser ubuntu netdev
 sudo service dbus reload
 sudo service wicd stop
-sudo service wicd start 
+sudo service wicd start
 
 # Kill unwanted services
 sudo systemctl disable lightdm
@@ -68,5 +69,5 @@ cd ~/Downloads
 curl -fsSL get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker ubuntu
-cd ~
+cd
 rm ~/Downloads/*
