@@ -98,6 +98,7 @@ If you need to clear the usb drive from a previous mkusb build then ...
 and select wipe first 1Mb.
 
 
+
 ## Create our system on a stick using mkusb
 
 Download [ubuntu-16.04.2-desktop-amd64.iso](https://www.ubuntu.com/download/desktop) to ~/Downloads .
