@@ -27,10 +27,10 @@ The basic plan is from my Ubuntu 16.04.02 desktop ...
 
 The drive structure includes ...
 
-The ISO         (just like a CD image)
-casper-rw       (the overlay partition for changes, your home directory, etc)
-swap            (swap!)
-usbdata         (your data)
+    The ISO         (just like a CD image)
+    casper-rw       (the overlay partition for changes, your home directory, etc)
+    swap            (swap!)
+    usbdata         (your data)
 
 
 ## Limitations
