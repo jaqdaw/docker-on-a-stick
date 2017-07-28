@@ -132,13 +132,13 @@ Run "doasbuild.sh"
 Edit "doasconfig.sh" to suit your build, add packages, disable services, etc.
 
 Copy the "~/doasbuild" directory and contents to the USBDATA partition of your usb drive.
-Copy the "doas" directory (from wherever you put it) and contents to the USBDATA partition of your usb drive.
+Copy the "docker-on-a-stick" directory (from wherever you put it) and contents to the USBDATA partition of your usb drive.
 
 
 
 ## Run doas usb drive and configure
 
-Boot from usb drive, go to tty1 (CTRL-ALT-F1) and run "doasconfig.sh" from "/media/ubuntu/usbdata/doas" directory.
+Boot from usb drive, go to tty1 (CTRL-ALT-F1) and run "doasconfig.sh" from "/media/ubuntu/usbdata/docker-on-a-stick" directory.
 
 
 
