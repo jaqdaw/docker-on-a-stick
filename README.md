@@ -10,6 +10,7 @@ resources. So I wanted to have the same environment on a usb drive, this is a co
 than any fancypants code development.
 
 
+
 ## The Plan
 
 The basic plan is from my Ubuntu 16.04.02 desktop ...
@@ -25,6 +26,7 @@ The basic plan is from my Ubuntu 16.04.02 desktop ...
 > Tidy up the install to suit
 
 
+
 The drive structure includes ...
 
     The ISO         (just like a CD image)
@@ -33,6 +35,7 @@ The drive structure includes ...
     usbdata         (your data)
 
 
+    
 ## Limitations
 
 Because mkusb uses a union filesystem (the casper-rw partition) to overlay changes on top of the Ubuntu ISO 
@@ -62,6 +65,7 @@ Then run to suit your drive/partition, eg /dev/sdd1 ...
     sudo mount /dev/sd?? /media/ubuntu/usbdata
 
 
+    
 ## Installing mkusb
 
 Refer to [mkusb](https://help.ubuntu.com/community/mkusb) for further info.
@@ -73,6 +77,7 @@ In my case, on Ubuntu 16.04.02. Basic install ...
     sudo apt-get update
 
     sudo apt-get install mkusb
+
 
     
 ## Prepare usb drive
@@ -113,6 +118,7 @@ partition of approx 9Gb.
 Boot from the USB drive to check it is working then reboot back to your desktop.
 
 
+
 ## Create doasbuild directory and copy to "usbdata" partition
 
 The script "doasbuild.sh" fetches config files etc from your home directory and puts them in a
@@ -128,9 +134,11 @@ Copy the "~/doasbuild" directory and contents to the USBDATA partition of your u
 Copy the "doas" directory (from wherever you put it) and contents to the USBDATA partition of your usb drive.
 
 
+
 ## Run doas usb drive and configure
 
 Boot from usb drive, go to tty1 (CTRL-ALT-F1) and run "doasconfig.sh" from "/media/ubuntu/usbdata/doas" directory.
+
 
 
 ## Tidy Up
@@ -171,6 +179,8 @@ Reboot and enjoy...
 
     sudo shutdown -r now
 
+    
+    
 ## Test Docker
 
     docker run hello-world
