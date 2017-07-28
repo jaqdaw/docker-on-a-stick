@@ -1,0 +1,122 @@
+<<TMUX>>
+When specifying keys, most represent themselves (for example ‘A’ to ‘Z’).
+Ctrl keys may be prefixed with ‘C-’ or ‘^’, and Alt (meta) with ‘M-’.
+In addition, the following special key names are accepted:
+Up, Down, Left, Right, BSpace, BTab, DC (Delete), End, Enter, Escape, F1 to F20, Home, IC (Insert),
+NPage/PageDown/PgDn, PPage/PageUp/PgUp, Space, and Tab.
+Note that to bind the ‘"’ or ‘'’ keys, quotation marks are necessary
+
+PREFIX:        CTRL-z
+CREATE:        +c
+WinLeft:       +p
+WinRight:      +n
+Pane:          +LRUD
+PSplit L/R:    +%
+PSplit U/D:    +"
+PFull:         +z
+Detach:        +d
+Reattach:      tmux attach -t 0    (tmux ls for session #s)
+MarkTxt:       Control+b [
+MarkStart:     Control+Space
+MarkCopy:      Alt+w
+MarkPaste:     Control+b ]
+PasteAll:      +#
+tmux show-buffer
+
+<<VIM>>
+
+    :help keyword - open help for keyword
+    :saveas file - save file as
+    :close - close current pane
+    :e file - edit a file in a new buffer
+    :ls - list all open buffers
+    :w - write (save) the file, but don't exit
+    :wq or :x or ZZ - write (save) and quit
+    :q - quit (fails if there are unsaved changes)
+    :q! or ZQ - quit and throw away unsaved changes
+    :tabnew or :tabnew file - open a file in a new tab
+    Ctrl + wT - move the current split window into its own tab
+    gt or :tabnext or :tabn - move to the next tab
+    gT or :tabprev or :tabp - move to the previous tab
+    #gt - move to tab number #
+    :tabmove # - move current tab to the #th position (indexed from 0)
+    :tabclose or :tabc - close the current tab and all its windows
+    :tabonly or :tabo - close all tabs except for the current one
+    :tabdo command - run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+
+gg - go to the first line of the document
+G - go to the last line of the document
+5G - go to line 5
+
+cc - change (replace) entire line
+u - undo
+Ctrl + r - redo
+
+v - start visual mode, mark lines, then do a command (like y-yank)
+Esc - exit visual mode
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+
+yy - yank (copy) a line
+2yy - yank (copy) 2 lines
+y$ - yank (copy) to end of line
+p - put (paste) the clipboard after cursor
+dd - delete (cut) a line
+2dd - delete (cut) 2 lines
+
+
+/pattern - search for pattern
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+
+
+
+Ctrl + ws - split window
+Ctrl + ww - switch windows
+Ctrl + wq - quit a window
+Ctrl + wv - split window vertically
+Ctrl + wh - move cursor to the left window (vertical split)
+Ctrl + wl - move cursor to the right window (vertical split)
+Ctrl + wj - move cursor to the window below (horizontal split)
+Ctrl + wk - move cursor to the window above (horizontal split)
+
+<<scrooloose/nerdtree>>
+:help NERDTree
+:NERDTree
+:NERDTreeClose
+:NERDTreeFind
+
+<<tpope/vim-commentary>>
+gcc
+
+<<ctrlpvim/ctrlp.vim>>
+:CtrlP
+:help ctrlp-commands
+
+<<airblade/vim-gitgutter>>
+:GitGutterToggle
+
+<<vim-scripts/grep.vim>>
+:Grep
+
+<<bronson/vim-trailing-whitespace>>
+:FixWhitespace
+
+<<majutsushi/tagbar>>
+sudo apt-get install exuberant-ctags
+:TagbarToggle
+
+<<scrooloose/syntastic>>
+:SyntasticInfo
+:SyntasticCheck python pylint flake8 ????
+
+<<Yggdroot/indentLine>>
+:IndentLinesToggle
+
+<<avelino/vim-bootstrap-updater>>
+:PlugInstall
+
+<<zhaocai/GoldenView.Vim>>
+????

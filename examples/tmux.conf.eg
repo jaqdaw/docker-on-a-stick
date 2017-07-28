@@ -1,0 +1,74 @@
+# Changes to this file aren't read by tmux automatically,
+# compleletely close the tmux sesssion and reopen it or
+# ~PREFIX :~ to open command mode and type "source-file ~/.tmux.conf" or
+# "tsr" in terminal which is an alias in ~/.fishrc or use binding `M-c r` to make it work
+#
+# from FAQ file in tmux source code:
+# to see the default session options by starting a new tmux server with no configuration file:
+# 	$ tmux -Lfoo -f/dev/null start\; show -g
+# Or the default window options:
+# 	$ tmux -Lfoo -f/dev/null start\; show -gw
+
+#When specifying keys, most represent themselves (for example ‘A’ to ‘Z’). 
+#Ctrl keys may be prefixed with ‘C-’ or ‘^’, and Alt (meta) with ‘M-’.
+#In addition, the following special key names are accepted:
+#Up, Down, Left, Right, BSpace, BTab, DC (Delete), End, Enter, Escape, F1 to F20, Home, IC (Insert), 
+#NPage/PageDown/PgDn, PPage/PageUp/PgUp, Space, and Tab. 
+#Note that to bind the ‘"’ or ‘'’ keys, quotation marks are necessary 
+#PREFIX:        CTRL-z
+#CREATE:        +c
+#WinLeft:       +p
+#WinRight:      +n
+#Pane:          +LRUD
+#PSplit L/R:    +%
+#PSplit U/D:    +"
+#PFull:         +z
+#Detach:        +d
+#Reattach:      tmux attach -t 0    (tmux ls for session #s)
+#MarkTxt:       Control+b [ 
+#MarkStart:     Control+Space
+#MarkCopy:      Alt+w
+#MarkPaste:     Control+b ]
+#PasteAll:      +#
+#tmux show-buffer
+
+
+unbind-key C-b
+set -g prefix C-z
+bind-key C-z send-prefix
+
+# Example of using a shell command in the status line
+#set -g status-right "#[fg=yellow]#(uptime | cut -d ',' -f 2-)"
+
+# Start Window Numbering at 1
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Automatically set window title
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+
+set -s default-terminal "screen-256color"
+set -g history-limit 10000
+setw -g monitor-activity on
+
+# Aggressive resize(don't know what this means)
+setw -g aggressive-resize on
+
+# No delay for escape key press
+set -sg escape-time 50
+
+# THEME
+set -g status-bg black
+set -g status-fg white
+set -g window-status-current-bg white
+set -g window-status-current-fg black
+set -g window-status-current-attr bold
+set -g status-interval 60
+set -g status-left-length 30
+set -g status-left '#[fg=green](#S) #(whoami)'
+set -g status-right '#[fg=yellow]#(cut -d " " -f 1-3 /proc/loadavg)#[default] #[fg=white]%H:%M#[default]'
+
+# Highlight active window
+setw -g window-status-current-fg red
+set -g pane-active-border-fg red

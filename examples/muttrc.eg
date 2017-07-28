@@ -1,0 +1,41 @@
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user = 'YOU@gmail.com'
+set imap_pass = ''
+set from='YOU@gmail.com'
+set realname='YOU'
+set folder = "imaps://imap.gmail.com:993"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set smtp_url = 'smtps://YOU@gmail.com@smtp.gmail.com:465/'
+set move = no
+set imap_keepalive = 900
+set use_from = yes
+set envelope_from = yes
+set smtp_pass = ""
+set spoolfile = "+INBOX"
+set charset = "utf-8"
+
+# G to get mail
+bind index G imap-fetch-mail
+set editor = "nano"
+unset record
+
+set mail_check = 120
+set timeout = 300
+set imap_keepalive = 300
+
+set sort = reverse-date-received
+
+# Set up preview pane for messages
+set pager_index_lines = 10	# number of index lines to show
+set pager_context = 3		# number of context lines to show
+set pager_stop = yes		# don't go to next message automatically
+set menu_scroll = yes		# scroll in menus
+set tilde = yes			# show tildes like in vim
+set markers = no		# no ugly plus signs
+
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
