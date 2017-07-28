@@ -27,10 +27,10 @@ The basic plan is from my Ubuntu 16.04.02 desktop ...
 
 The drive structure includes ...
 
-> The ISO         (just like a CD image)
-> casper-rw       (the overlay partition for changes, your home directory, etc)
-> swap            (swap!)
-> usbdata         (your data)
+The ISO         (just like a CD image)
+casper-rw       (the overlay partition for changes, your home directory, etc)
+swap            (swap!)
+usbdata         (your data)
 
 
 ## Limitations
@@ -93,7 +93,7 @@ If you need to clear the usb drive from a previous mkusb build then ...
 and select wipe first 1Mb.
 
 
-# Create our system on a stick using mkusb
+## Create our system on a stick using mkusb
 
 Download [ubuntu-16.04.2-desktop-amd64.iso](https://www.ubuntu.com/download/desktop) to ~/Downloads .
 
@@ -103,9 +103,9 @@ Download [ubuntu-16.04.2-desktop-amd64.iso](https://www.ubuntu.com/download/desk
 
 When asked by gui, choose (worked for me) ...
 
-Default:        GPT
-Default:        usb-pack_efi
-Persistence:    30%/50%/80% etc depending on your choice.
+    Default:        GPT
+    Default:        usb-pack_efi
+    Persistence:    30%/50%/80% etc depending on your choice.
 
 I have a 32Gb USB drive and chose 70%. This makes a "casper-rw" partition of approx 21Gb and a "usbdata"
 partition of approx 9Gb.
@@ -113,7 +113,7 @@ partition of approx 9Gb.
 Boot from the USB drive to check it is working then reboot back to your desktop.
 
 
-# Create doasbuild directory and copy to "usbdata" partition
+## Create doasbuild directory and copy to "usbdata" partition
 
 The script "doasbuild.sh" fetches config files etc from your home directory and puts them in a
 directory structure within "~/doasbuild" .
@@ -128,12 +128,12 @@ Copy the "~/doasbuild" directory and contents to the USBDATA partition of your u
 Copy the "doas" directory (from wherever you put it) and contents to the USBDATA partition of your usb drive.
 
 
-# Run doas usb drive and configure
+## Run doas usb drive and configure
 
 Boot from usb drive, go to tty1 (CTRL-ALT-F1) and run "doasconfig.sh" from "/media/ubuntu/usbdata/doas" directory.
 
 
-# Tidy Up
+## Tidy Up
 
 The examples directory contains mutt, tmux & vim config files. Plus 2 bash scripts for launching
 everything. Plus+, help.txt has useful tmux and vim commands. 
@@ -155,9 +155,9 @@ Check docker...
 Add your Gmail details to "~/.mutt/muttrc" leaving passwords blank so you can login on mutt start.
 Google has changed it's policy so that you must allow less secure apps for mutt to work.
 
-> set imap_user = 'YOU@gmail.com'
-> set imap_pass = ''
-> set smtp_pass = ""
+    set imap_user = 'YOU@gmail.com'
+    set imap_pass = ''
+    set smtp_pass = ""
 
 Uncomment “LEDS=+num” for numlock...
 
@@ -171,7 +171,7 @@ Reboot and enjoy...
 
     sudo shutdown -r now
 
-# Test Docker
+## Test Docker
 
     docker run hello-world
     
