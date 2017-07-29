@@ -32,7 +32,7 @@ cp -fr /media/ubuntu/usbdata/doasbuild/script ~/script
 cp -fr /media/ubuntu/usbdata/doasbuild/ssh ~/.ssh
 cp -fr /media/ubuntu/usbdata/doasbuild/tmux ~/.tmux
 cp -fr /media/ubuntu/usbdata/doasbuild/vim ~/.vim
-cp -fr /media/ubuntu/usbdata/doas ~/doas
+cp -fr /media/ubuntu/usbdata/docker-on-a-stick ~/docker-on-a-stick
 sudo chown -R ubuntu:ubuntu ~/*
 
 # Create file links
